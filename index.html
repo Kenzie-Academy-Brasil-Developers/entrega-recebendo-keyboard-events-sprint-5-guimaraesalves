@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Entrega Keyboard Events</title>
+<style>
+    body {
+        background-image: url(dddd.jpg);
+        background-color: #201e1e;
+        height: 1000px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: relative;
+    }
+    #box {
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      background:transparent;
+      font-size: 100px;
+      left: 300px;
+      top: 200px;
+    }
+
+    .hero-text {
+    text-align: center;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    }
+
+    img {
+        width: 200px;
+        height: 90px;
+    }
+
+    
+  
+</style>
+<script>
+        
+    let boxTop = 200;
+    let boxLeft = 200;
+
+    function mover(){
+    let box = document.getElementById("box");
+    let seta = event.keyCode;
+    //keyCode: Valores para as teclas: "ArrowDown" - 40 - (seta para baixo = (+10)); "ArrowLeft" - 37 - (seta para esq = (-10)); "ArrowRight"  - 39 -(seta para dir  = (+10)); "ArrowUp" - 38 (seta para cima = (-10));
+
+            if(seta == 37){
+                boxLeft -= 10;
+                box.style.left = boxLeft + "px";
+            } else if (seta == 38){
+                boxTop -= 10;
+                box.style.top = boxTop + "px"
+            } else if (seta == 39){
+                boxLeft += 10;
+                box.style.left = boxLeft + "px";
+            } else if (seta == 40){
+                boxTop += 10;
+                box.style.top = boxTop + "px";
+            }
+}
+
+document.addEventListener('keydown', mover);
+
+
+
+
+
+</script>
+</head>
+<body>
+    <div class="hero-image">
+        <div class="hero-text">
+
+          <h1 style="font-size:50px">Mova o Disco Voador!</h1>
+          <h3>Use as setas ⬆️ ⬇️ ➡️ ⬅️</h3>
+          
+        </div>
+      </div>
+    
+    <div id="box"><img src="124575.png" alt="disco"></div>
+    <!-- <div id="box">🛸</div> -->
+</body>
+</html>
